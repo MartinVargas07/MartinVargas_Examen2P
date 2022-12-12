@@ -2,7 +2,7 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+	int xRecarga = 0;
 
 	public MainPage()
 	{
@@ -11,14 +11,27 @@ public partial class MainPage : ContentPage
 
 	private void OnCounterClicked(object sender, EventArgs e)
 	{
-		count++;
+		MV_CounterBtn.Text = $" Se estaran recargando {xRecarga} $ en su cuenta";
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
+		SemanticScreenReader.Announce(MV_CounterBtn.Text);
 	}
+
+	void Opcion1(object sender, CheckedChangedEventArgs e)
+	{
+        MV_lblBtn.Text = "Ha seleccionado una recarga de 3$";
+		xRecarga = 3;
+	}
+    void Opcion2(object sender, CheckedChangedEventArgs e)
+    {
+        MV_lblBtn.Text = "Ha seleccionado una recarga de 5$";
+        xRecarga = 5;
+    }
+    void Opcion3(object sender, CheckedChangedEventArgs e)
+    {
+        MV_lblBtn.Text = "Ha seleccionado una recarga de 10$";
+        xRecarga = 10;
+    }
+
+
 }
 

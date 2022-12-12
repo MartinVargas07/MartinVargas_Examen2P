@@ -7,31 +7,58 @@
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
-            VerticalOptions="Center">
+            VerticalOptions="Center"
+            >
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
+            <Label x:Name="MV_lblNumero"
+                Text="Ingrese el numero de telefono:"
                 SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+                FontSize="22"
+                HorizontalOptions="Center"
+                VerticalTextAlignment="Start"
+                />
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
+
+            <Entry x:Name="MV_entNumero"
+                    Placeholder=" Ej:0994428772" 
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"
+                   
+                   />
+
+            <Label x:Name="MV_lblOperador"
+                Text="Seleccione el operador:"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
-                HorizontalOptions="Center" />
+                HorizontalOptions="StartAndExpand" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
+            <Picker  x:Name="MV_pckOperador"
+                     Title="Seleccione el Operador:">
+                <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Claro</x:String>
+                    <x:String>Movistar</x:String>
+                    <x:String>Tuenti</x:String>
+                </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label x:Name="MV_lblRecarga"
+                Text="Selccione el valor de la recarga:"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="StartAndExpand" />
+
+            <RadioButton Content="3" CheckedChanged="Opcion1"/>
+            <RadioButton Content="5" CheckedChanged="Opcion2"/>
+            <RadioButton Content="10" CheckedChanged="Opcion3"/>
+
+            <Label  x:Name="MV_lblBtn"
+                Text="" />
+
+            <Button 
+                x:Name="MV_CounterBtn"
+                Text="Recargar"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
